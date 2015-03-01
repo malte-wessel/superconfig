@@ -1,16 +1,16 @@
 /* global __dirname */
 'use strict';
 
-import Config from './../src/Config';
+import superconfig from './../src/Config';
 import test from 'tape';
 
-let p = new Config({
+let p = superconfig({
 	path: __dirname + '/config',
 	env: 'production',
 	default: 'production'
 });
 
-let d = new Config({
+let d = superconfig({
 	path: __dirname + '/config',
 	env: 'development',
 	default: 'production'
