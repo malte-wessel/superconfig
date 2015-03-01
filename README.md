@@ -3,7 +3,10 @@ superconfig
 
 Lightweight config loader.
 
-[![Build Status](https://travis-ci.org/malte-wessel/superconfig.svg?branch=master)](https://travis-ci.org/malte-wessel/superconfig)
+[![Travis](https://img.shields.io/travis/malte-wessel/superconfig.svg?style=flat-square)]()
+[![David](https://img.shields.io/david/malte-wessel/superconfig.svg?style=flat-square)]()
+[![NPM](https://img.shields.io/badge/npm-superconfig-brightgreen.svg?style=flat-square)]()
+
 
 ## Install
 
