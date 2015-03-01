@@ -8,7 +8,7 @@ Lightweight config loader. Support for environmental loading, default config, ne
 ## Install
 
 ````
-npm install minimal-flux --save
+npm install super-config --save
 ````
 
 ## Documentation
