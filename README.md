@@ -1,7 +1,7 @@
 superconfig
 =========
 
-Lightweight config loader. Support for environmental loading, default config, nested keys.
+Lightweight config loader.
 
 [![Build Status](https://travis-ci.org/malte-wessel/superconfig.svg?branch=master)](https://travis-ci.org/malte-wessel/superconfig)
 
@@ -29,7 +29,6 @@ Your config directory may look like this:
         server.js
     /development
         database.js
-/...
 ````
 
 Set up superconfig in a separate file
@@ -61,4 +60,39 @@ var database = new Database(config('database'));
 
 // Use a single value
 var user = config('database.user');
+
+// If you are working in the development environment
+// superconfig will use the server configuration of your
+// production environment, since we didn't provide one
+// for the development environment
+server.listen(config('server.port'));
 ````
+
+### Nested directories/variables
+
+You can work with nested directories:
+````
+/config
+    /production
+        /database
+            mysql.js
+            sqllite.js
+````
+
+Access your variables like:
+````javascript
+var user = config('database.mysql.user');
+````
+
+## API
+
+### `superconfig(options)`
+#### Params
+* `options` {Object}
+    * `options.path` {String} Path to your config directory
+    * `options.env` {String} The actual environment
+    * `options.default` {String} Your default environment
+
+* Returns
+    * {Function} Invoking superconfig() returns a getter function, that let's you access your variables
+    * The function takes a path to your variable e.g. `database.user`
