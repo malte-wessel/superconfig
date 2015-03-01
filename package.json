@@ -11,9 +11,9 @@
   "author": "Malte Wessel <delabreak@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/malte-wessel/super-config.git"
+    "url": "https://github.com/malte-wessel/superconfig.git"
   },
-  "homepage": "https://github.com/malte-wessel/super-config",
+  "homepage": "https://github.com/malte-wessel/superconfig",
   "license": "MIT",
   "keywords": [
     "config",
