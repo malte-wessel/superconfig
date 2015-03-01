@@ -1,7 +1,7 @@
 /* global __dirname */
 'use strict';
 
-import superconfig from './../src/Config';
+import superconfig from './../src';
 import test from 'tape';
 
 let p = superconfig({
