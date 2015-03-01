@@ -2,8 +2,9 @@
   "name": "super-config",
   "version": "0.1.0",
   "description": "Config file loader",
-  "main": "index.js",
+  "main": "dist/Config.js",
   "scripts": {
+    "build": "./node_modules/.bin/babel ./src --out-dir ./dist",
     "test": "./node_modules/.bin/babel-node ./node_modules/.bin/tape test/*.js"
   },
   "author": "",
