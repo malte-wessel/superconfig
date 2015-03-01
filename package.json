@@ -11,5 +11,9 @@
   "devDependencies": {
     "babel": "^4.6.3",
     "tape": "^3.5.0"
+  },
+  "dependencies": {
+    "object-assign": "^2.0.0",
+    "require-all": "^1.0.0"
   }
 }
