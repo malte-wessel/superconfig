@@ -1,7 +1,7 @@
 {
   "name": "super-config",
   "version": "0.1.0",
-  "description": "Config file loader",
+  "description": "Lightweight config loader. Support for environmental loading, default config, nested keys.",
   "main": "dist/Config.js",
   "scripts": {
     "build": "./node_modules/.bin/babel ./src --out-dir ./dist",
@@ -9,7 +9,19 @@
     "prepublish": "npm test && npm run build"
   },
   "author": "Malte Wessel <delabreak@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malte-wessel/super-config.git"
+  },
+  "homepage": "https://github.com/malte-wessel/super-config",
   "license": "MIT",
+  "keywords": [
+    "config",
+    "configuration",
+    "env",
+    "environment",
+    "defaults"
+  ],
   "devDependencies": {
     "babel": "^4.6.3",
     "tape": "^3.5.0"
