@@ -1,5 +1,5 @@
 {
-  "name": "super-config",
+  "name": "superconfig",
   "version": "0.1.0",
   "description": "Lightweight config loader. Support for environmental loading, default config, nested keys.",
   "main": "dist/Config.js",

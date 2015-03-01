@@ -8,7 +8,7 @@ Lightweight config loader. Support for environmental loading, default config, ne
 ## Install
 
 ````
-npm install super-config --save
+npm install superconfig --save
 ````
 
 ## Documentation
