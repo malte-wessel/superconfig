@@ -7,13 +7,13 @@ import test from 'tape';
 let p = superconfig({
 	path: __dirname + '/config',
 	env: 'production',
-	default: 'production'
+	denv: 'production'
 });
 
 let d = superconfig({
 	path: __dirname + '/config',
 	env: 'development',
-	default: 'production'
+	denv: 'production'
 });
 
 test('Throw error when key undefined', (t) => {
@@ -37,6 +37,11 @@ test('Get nested config value', (t) => {
 	t.end();
 });
 
+test('Get actual env', (t) => {
+	t.ok(d('env') === 'development', 'Should equal env');
+	t.end();
+});
+
 test('Config is immutable', (t) => {
 	let obj = p('foo');
 	obj.foo = 'mutated';
@@ -52,5 +57,13 @@ test('Default config', (t) => {
 test('Overrides default config', (t) => {
 	t.ok(d('bar.bar') === 'override', 'Should equal development config');
 	t.deepEqual(d('bar.arr'), ['d', 'e'], 'Should equal development config');
+	t.end();
+});
+
+test('Validate options', (t) => {
+	let a = superconfig({path: __dirname + '/config'});
+	t.throws(superconfig, /You need to provide a path to your config directory/, 'Should throw if no path options was defined');
+	t.ok(a('foo.foo') === 'bar', 'Should use `production` as default env when not provided');
+	t.ok(a('bar.bar') === 'override', 'Should use `development` when env not provided');
 	t.end();
 });

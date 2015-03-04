@@ -49,7 +49,7 @@ module.exports = superconfig({
     
     // The default environment,
     // these variables will be extended with those of the actual environment
-    default: 'production'
+    denv: 'production'
 });
 
 ````
@@ -94,7 +94,7 @@ var user = config('database.mysql.user');
 * `options` {Object}
     * `options.path` {String} Path to your config directory
     * `options.env` {String} The actual environment
-    * `options.default` {String} Your default environment
+    * `options.denv` {String} Your default environment
 
 * Returns
     * {Function} Invoking superconfig() returns a getter function, that let's you access your variables

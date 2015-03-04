@@ -1,10 +1,11 @@
+/* global process */
 'use strict';
 
 import merge from 'lodash.merge';
 import clonedeep from 'lodash.clonedeep';
 import isArray from 'lodash.isarray';
 import requireAll from 'require-all';
-import path from 'path';
+import { join } from 'path';
 
 let filter = /(.*)\.js|.json$/;
 
@@ -12,18 +13,23 @@ function notfound(key) {
 	return new Error(`Key ${key} not found.`);
 }
 
-export default function superconfig(options) {
+export default function superconfig(options = {}) {
+	let { path, env, denv } = options;
+
+	if(!path) throw new Error('You need to provide a path to your config directory');
+	env = env || process.env.NODE_ENV || 'development';
+	denv = denv || 'production';
 
 	// Load default config
 	let config = requireAll({
-		dirname: path.join(options.path, options.default),
+		dirname: join(path, denv),
 		filter: filter
 	});
 
 	// Load environmental config
 	if (options.env !== options.default) {
 		let override = requireAll({
-			dirname: path.join(options.path, options.env),
+			dirname: join(path, env),
 			filter: filter
 		});
 
@@ -33,6 +39,8 @@ export default function superconfig(options) {
 
 	// Return getter function
 	return function get(key) {
+		if(key === 'env') return options.env;
+
 		let result;
 
 		try {
