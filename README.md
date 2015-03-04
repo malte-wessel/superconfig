@@ -16,7 +16,7 @@ npm install superconfig --save
 
 ## Introduction
 
-In big applications you have to deal with a lot of configuration variables. There are plenty of configuration modules out there that expect you to only have one configuration file for each environment. However, when your application grows you may want to encapsulate your variables in separate files in order to keep things overseeable. For example one file for your databases, one file for your server setup and so on. You probably also have some variables that doesn't change throughout your environments. If you only have one file for each environment you need to define every variable for each environment - even if they do not differ.
+In large applications you have to deal with a lot of configuration variables. There are plenty of configuration modules out there that expect you to only have one configuration file for each environment. However, when your application grows you may want to encapsulate your variables in separate files in order to keep things overseeable. For example one file for your databases, one file for your server setup and so on. You probably also have some variables that doesn't change throughout your environments. If you only have one file for each environment you need to define every variable for each environment - even if they do not differ.
 
 **superconfig let's you...**
 * define your configuration variables in *separate files*
