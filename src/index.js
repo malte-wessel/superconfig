@@ -5,7 +5,7 @@ import merge from 'lodash.merge';
 import clonedeep from 'lodash.clonedeep';
 import isArray from 'lodash.isarray';
 import requireAll from 'require-all';
-import { join } from 'path';
+import { resolve } from 'path';
 
 let filter = /(.*)\.js|.json$/;
 
@@ -22,14 +22,14 @@ export default function superconfig(options = {}) {
 
 	// Load default config
 	let config = requireAll({
-		dirname: join(path, denv),
+		dirname: resolve(path, denv),
 		filter: filter
 	});
 
 	// Load environmental config
 	if (options.env !== options.default) {
 		let override = requireAll({
-			dirname: join(path, env),
+			dirname: resolve(path, env),
 			filter: filter
 		});
 
