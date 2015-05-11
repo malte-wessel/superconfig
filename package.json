@@ -1,6 +1,6 @@
 {
   "name": "superconfig",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Lightweight config loader. Support for environmental loading, default config, nested keys.",
   "main": "dist/index.js",
   "scripts": {
